@@ -1,12 +1,14 @@
-import React,{useState} from 'react';
-import * as th from three;
+import React,{useEffect} from 'react';
+import * as th from 'three';
 
-const Cube=()=>{
-    var scene = new th.Scene();
-    var cam =  new th.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+export const Cube=()=>{
+    useEffect(()=>{
+        var scene = new th.Scene();
+    var camera =  new th.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
     var renderer = new th.WebGLRenderer();
     renderer.setSize(window.innerWidth,window.innerHeight);
     document.body.appendChild(renderer.domElement);
+    //this.mount.appendChild(renderer.domElement);
     var geometry = new th.BoxGeometry( 1, 1, 1 );
     var material = new th.MeshBasicMaterial( { color: 0x00ff00 } );
     var cube = new th.Mesh( geometry, material );
@@ -19,9 +21,12 @@ const Cube=()=>{
         renderer.render( scene, camera );
     }
     animate();
+    })
+    
+    
     return(
-        <div>
-
-        </div>
+        <div/>
     )
 }
+
+

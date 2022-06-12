@@ -1,11 +1,10 @@
 
 import './App.css';
-//import Cube from './Componenets/Cube';
+import {Cube} from './Componenets/Cube';
 function App() {
   return (
     <div className="App">
-      {/* <Cube/> */}
-      <p>Hola</p>
+      <canvas><Cube/></canvas>
     </div>
   );
 }
